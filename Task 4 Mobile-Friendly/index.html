@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Everyday Learnings — Blog</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">Everyday Learnings</div>
+
+      <!-- checkbox hack for mobile nav -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+        <span></span>
+      </label>
+
+      <nav class="nav">
+        <a href="#" class="nav-item">Home</a>
+        <a href="#" class="nav-item">About</a>
+        <a href="#" class="nav-item">Topics</a>
+        <a href="#" class="nav-item">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Thoughts, experiments, and tiny lessons.</h1>
+      <p class="lead">A small blog about learning web development, tools, and practice — written simply.</p>
+    </section>
+
+    <section class="posts-grid" aria-live="polite">
+      <article class="post-card">
+        <img src="images/blog1.jpg" alt="Post 1 image" class="post-img" />
+        <div class="post-content">
+          <h2 class="post-title">Designing responsive layouts — a quick guide</h2>
+          <p class="post-excerpt">Tips and practical steps to convert desktop pages into mobile-friendly experiences using media queries and flexible units.</p>
+          <a class="read-more" href="#">Read more →</a>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <img src="images/blog2.jpg" alt="Post 2 image" class="post-img" />
+        <div class="post-content">
+          <h2 class="post-title">CSS units explained: %, rem, vw</h2>
+          <p class="post-excerpt">When to use relative versus absolute units and how they affect responsiveness across devices.</p>
+          <a class="read-more" href="#">Read more →</a>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <img src="images/blog3.jpg" alt="Post 3 image" class="post-img" />
+        <div class="post-content">
+          <h2 class="post-title">Simple accessible navigation for small screens</h2>
+          <p class="post-excerpt">A practical approach to building a mobile-friendly nav that is also keyboard accessible.</p>
+          <a class="read-more" href="#">Read more →</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2025 Everyday Learnings — Built for Web Dev Internship Task 4</p>
+      <p class="small">Follow: <a href="#">Twitter</a> • <a href="#">GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>

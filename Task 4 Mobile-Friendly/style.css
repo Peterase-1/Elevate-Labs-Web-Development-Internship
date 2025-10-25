@@ -1,0 +1,91 @@
+/* style.css — Responsive Blog (informal flat design, no gradients) */
+
+/* Base (desktop-first) */
+:root{
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --muted: #666666;
+  --accent: #0aa3a3; /* teal-ish accent */
+  --accent-2: #f59a23; /* orange */
+  --container: 1100px;
+  --gap: 1.25rem;
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);min-height:100%}
+.container{max-width:var(--container);margin:0 auto;padding:0 1rem;}
+
+/* Header */
+.site-header{border-bottom:1px solid #eee;background:var(--bg);position:sticky;top:0;z-index:10}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+.logo{font-weight:700;font-size:1.25rem;color:var(--accent)}
+
+/* Nav (desktop) */
+.nav{display:flex;gap:1rem;align-items:center}
+.nav-item{text-decoration:none;color:var(--text);padding:0.5rem 0.6rem;border-radius:6px}
+.nav-item:hover{background:#f2f7f7;color:var(--accent)}
+
+/* Nav toggle (mobile) */
+.nav-toggle{display:none}
+.nav-toggle-label{display:none}
+
+/* Hero */
+.hero{padding:2rem 0}
+.hero h1{margin:0 0 0.5rem;font-size:2rem}
+.lead{color:var(--muted);margin:0}
+
+/* Posts grid */
+.posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);padding:2rem 0}
+.post-card{background:#fff;border:1px solid #f0f0f0;border-radius:8px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 4px rgba(10,10,10,0.03)}
+.post-img{width:100%;height:180px;object-fit:cover;display:block}
+.post-content{padding:1rem;flex:1;display:flex;flex-direction:column}
+.post-title{margin:0 0 0.5rem;font-size:1.125rem}
+.post-excerpt{margin:0 0 1rem;color:var(--muted);flex:1}
+.read-more{text-decoration:none;color:var(--accent);font-weight:600}
+
+/* Footer */
+.site-footer{border-top:1px solid #eee;padding:1.25rem 0;margin-top:2rem;color:var(--muted)}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.small{font-size:0.9rem}
+
+/* Responsive rules for <= 1024 */
+@media (max-width:1024px){
+  .posts-grid{grid-template-columns:repeat(2,1fr)}
+  .post-img{height:160px}
+}
+
+/* Mobile-first adjustments: target small devices (<=768px) */
+@media (max-width:768px){
+  :root{font-size:15px}
+  .header-inner{padding:0.75rem 0}
+  .logo{font-size:1.05rem}
+  /* Show the hamburger */
+  .nav{display:block;position:absolute;right:1rem;top:64px;background:transparent;min-width:160px;padding:0;visibility:visible}
+  .nav-item{display:block;padding:0.6rem 0.8rem;border-radius:6px}
+  /* Hide nav by default and use checkbox to show */
+  .nav-toggle{display:block;position:absolute;opacity:0;width:2rem;height:2rem;right:1rem;top:0.9rem;z-index:20}
+  .nav-toggle-label{display:block;width:2rem;height:2rem;position:relative;cursor:pointer}
+  .nav-toggle-label span, .nav-toggle-label span::before, .nav-toggle-label span::after{display:block;height:3px;width:22px;background:var(--text);position:absolute;left:0;border-radius:3px;transition:transform .2s ease,opacity .2s ease}
+  .nav-toggle-label span{top:50%;transform:translateY(-50%)}
+  .nav-toggle-label span::before{content:'';top:-7px}
+  .nav-toggle-label span::after{content:'';top:7px}
+  /* Default: hide nav */
+  .nav{display:none;position:static;background:transparent;padding:0;margin-top:0}
+  /* When checked, show nav as vertical list */
+  .nav-toggle:checked + .nav-toggle-label + .nav{display:block;background:#fff;border:1px solid #eee;padding:0.5rem 0;margin-top:0.5rem;border-radius:8px}
+  .nav-toggle:checked + .nav-toggle-label span{background:transparent}
+  .nav-toggle:checked + .nav-toggle-label span::before{transform:rotate(45deg) translate(4px,4px)}
+  .nav-toggle:checked + .nav-toggle-label span::after{transform:rotate(-45deg) translate(4px,-4px)}
+
+  .hero h1{font-size:1.4rem}
+  .posts-grid{grid-template-columns:1fr;padding:1rem 0;gap:1rem}
+  .post-img{height:200px}
+  .container{padding:0 0.8rem}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+}
+
+/* Utility: prevent horizontal overflow */
+body, html{overflow-x:hidden}
