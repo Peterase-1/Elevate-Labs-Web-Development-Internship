@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7: Fetch and Display User Data</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>User Data from API</h1>
+            <p>Fetching data from JSONPlaceholder API</p>
+            <button id="reloadBtn" class="reload-btn">🔄 Reload Data</button>
+        </header>
+
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Loading user data...</p>
+        </div>
+
+        <div id="error" class="error hidden">
+            <h2>⚠️ Error</h2>
+            <p id="errorMessage"></p>
+            <button id="retryBtn" class="retry-btn">Try Again</button>
+        </div>
+
+        <div id="userContainer" class="user-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
